@@ -1,9 +1,16 @@
 package com.generation.farmaciabemestar.model;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 
@@ -15,24 +22,13 @@ public class Categoria {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotNull(message = "O atributo Medicamento é Obrigatório!")
-	private String medicamento;
+	@NotNull(message = "O Atributo Descrição é obrigatório")
+	private String descricao;
 	
-	@NotNull(message = "O atributo Vitamina é Obrigatório!")
-	private String vitamina;
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "categoria", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties("categoria")
+	private List<Produto> produto;
 	
-	@NotNull(message = "O atributo Cosmético é Obrigatório!")
-	private String cosmetico;
-	
-	@NotNull(message = "O atributo Skincare é Obrigatório!")
-	private String skincare;
-	
-	@NotNull(message = "O atributo Produto Infanti é Obrigatório!")
-	private String produtoInfanti;
-	
-	@NotNull(message = "O atributo Higiene Pessoal é Obrigatório!")
-	private String higienePessoal;
-
 	public Long getId() {
 		return id;
 	}
@@ -41,51 +37,19 @@ public class Categoria {
 		this.id = id;
 	}
 
-	public String getMedicamento() {
-		return medicamento;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setMedicamento(String medicamento) {
-		this.medicamento = medicamento;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
-	public String getVitamina() {
-		return vitamina;
+	public List<Produto> getProduto() {
+		return produto;
 	}
 
-	public void setVitamina(String vitamina) {
-		this.vitamina = vitamina;
-	}
-
-	public String getCosmetico() {
-		return cosmetico;
-	}
-
-	public void setCosmetico(String cosmetico) {
-		this.cosmetico = cosmetico;
-	}
-
-	public String getSkincare() {
-		return skincare;
-	}
-
-	public void setSkincare(String skincare) {
-		this.skincare = skincare;
-	}
-
-	public String getProdutoInfanti() {
-		return produtoInfanti;
-	}
-
-	public void setProdutoInfanti(String produtoInfanti) {
-		this.produtoInfanti = produtoInfanti;
-	}
-
-	public String getHigienePessoal() {
-		return higienePessoal;
-	}
-
-	public void setHigienePessoal(String higienePessoal) {
-		this.higienePessoal = higienePessoal;
+	public void setProduto(List<Produto> produto) {
+		this.produto = produto;
 	}
 }
