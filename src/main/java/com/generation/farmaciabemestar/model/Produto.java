@@ -39,7 +39,7 @@ public class Produto {
 	private String principalAtivo;
 	
 	@NotNull(message = "O atributo Data de Validade é obrigatório!")
-	private LocalDate dataDeValidade ;
+	private LocalDate dataDeValidade;
 	
 	@NotNull(message = "O atributo Preço é obrigatório!")
 	private Float preco;
