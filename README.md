@@ -36,6 +36,5 @@ Com o foco no gerenciamento de uma farmácia com requisitos principais produtos 
 | ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.x%20/%203.x-brightgreen) | 2.x / 3.x | Framework para aplicações web                          |
 | ![Spring Data JPA](https://img.shields.io/badge/Spring%20Data%20JPA-brightyellow) | —          | Acesso a banco de dados ORM                           |
 | ![Hibernate Validator](https://img.shields.io/badge/Validator-brightblue) | —          | Validação de dados de entrada                         |
-| ![H2 Database](https://img.shields.io/badge/H2-inmemory-blue) | —          | Banco em memória para testes rápidos                  |
 
 ---
