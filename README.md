@@ -1,6 +1,7 @@
 # ✨ Farmácia Bem Estar ✨
 
 Seja bem-vindo ao nosso Projeto de conclusão do Bloco II da Generation Brasil.
+
 Com o foco no gerenciamento de uma farmácia com requisitos principais produtos e categorias! Desenvolvida com **Spring Boot**, oferecendo recursos rápidos e seguros para administração dos estoques.
 
 ---
